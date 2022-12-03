@@ -1,0 +1,10 @@
+
+<div [hidden]="hideMessagebox">
+<p>welcome to {{hotelName}}</p>
+</div>
+
+<div *ngIf="rooms.availableRooms > 0">
+    Rooms List
+</div>
+
+<button (click)="toggle()">Toggling</button>
