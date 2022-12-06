@@ -1,9 +1,19 @@
 <div [hidden]="hideMessagebox">
     <p>welcome to {{hotelName}}</p>
 </div>
-{{roomList | json}}
+<!-- {{roomList | json}} -->
 
 {{rooms?.availableRooms ?? "No rooms"}}
+
+<div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+</div>
+
+<div>
+    <button (click)="addRome()">
+        Add room
+    </button>
+</div>
 
 <div *ngIf="rooms.availableRooms > 0">
     <hoinv-rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)"></hoinv-rooms-list>
